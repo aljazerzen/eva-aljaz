@@ -32,7 +32,7 @@ export default {
     rezervirana: []
   }),
   async mounted() {
-    const res = await this.$http.get("http://localhost:8000/darila");
+    const res = await this.$http.get("darila");
     this.set(res);
   },
   methods: {
@@ -41,9 +41,7 @@ export default {
       this.rezervirana = res.body.rezervirana;
     },
     async rezerviraj(darilo) {
-      const res = await this.$http.get(
-        `http://localhost:8000/rezerviraj?id=${darilo._id}`
-      );
+      const res = await this.$http.get(`rezerviraj?id=${darilo._id}`);
       this.set(res);
     }
   }
