@@ -2,49 +2,68 @@
   <section>
 
     <div>
-      <h2>18:00</h2>
-      Civilna poroka &bullet; Škofjeloški grajski vrt
-      <ul>
-        <li>Parkiranje v mestu</li>
-      </ul>
+      <h2>Civilna poroka</h2>
+      <h3>17:30</h3>
+      <p>
+      Grajski vrt v Škofji Loki <br>
+      Grajska pot 14 <br>
+      4220 Škofja Loka
+      </p>
+
     </div>
     <div>
-      <h2>20:30</h2>
-      Večerja &bullet; Dijaški dom Tabor
-      <ul>
-        <li>Plesna glasba</li>
-        <li>Band Jovo&amp;Kolegi</li>
-        <li>Žurka :)</li>
-      </ul>
+      <h2>Večerja in žurka</h2>
+      <h3>20:00</h3>
+      <p>
+      Dijaški dom Tabor<br>
+      Kotinkova ulica 4<br>
+      1000 Ljublajna
+      </p>
     </div>
-  
+
+    <!-- <div>
+      <h2>Žurka</h2>
+      <h3>24:00</h3>
+      <p>
+      Dijaški dom Tabor<br>
+      Kotinkova ulica 4<br>
+      1000 Ljublajna
+      </p>
+    </div>
+   -->
   </section>
 </template>
+<script>
+export default {
+  name: 'casovnica'
+}
+</script>
+
 <style scoped>
-section {
-  width: max-content;
-}
-section>div>div {
-  /* display: block; */
-  width: max-content;
-}
-section h1 {
-  font-family: "Amatic SC", cursive;
-  font-size: 54px;
-  margin: 0;
-  margin-top: 50px;
+* {
   text-align: center;
+}
+section {
+  width: 100%;
+  padding-top: 10px;
+  /* background-color: #666;  */
+}
+section h2 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+section h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 100;
+  font-size: 20px;
+  color: #666;
 }
 section p {
-  text-transform: uppercase;
-  text-align: center;
-}
-ul {
-  padding-left: 20px;
-  margin: 10px 0;
-}
-li {
-  margin: 5px 0;
+  margin-top: 10px;
+  color: #666;
+  
 }
 
 </style>

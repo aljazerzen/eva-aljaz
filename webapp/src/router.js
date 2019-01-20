@@ -2,34 +2,39 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Darila from './views/Darila';
+import Info from './views/Info';
 import Poroka from './views/Poroka';
+import Prideš from './views/Prideš';
 import Slike from './views/Slike';
-import Časovnica from './views/Časovnica';
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/', redirect: '/poroka' },
     {
-      path: '/poroka',
+      path: '/',
       name: 'poroka',
       component: Poroka
     },
     {
-      path: '/slike',
-      name: 'slike',
+      path: '/o-nama',
+      name: 'o-nama',
       component: Slike
     },
     {
-      path: '/časovnica',
-      name: 'časovnica',
-      component: Časovnica
+      path: '/seznam-želja',
+      name: 'seznam-želja',
+      component: Darila
     },
     {
-      path: '/darila',
-      name: 'darila',
-      component: Darila
+      path: '/prideš',
+      name: 'prideš',
+      component: Prideš
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: Info
     }
   ]
 })

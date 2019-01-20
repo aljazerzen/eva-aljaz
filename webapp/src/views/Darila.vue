@@ -3,12 +3,17 @@
     <p>
       Pri poročnih darilih se je ponavadi težko skoordinirati.
       Ker sva se iz napak najnih staršev naučila, da ne potrebujeva treh jedilnih servisov,
-      sva sestavila seznam stvari, ki bi se jih najbolj veslila.
+      sva sestavila seznam stvari, ki bi jih bila najbolj vesela.
     </p>
 
-    <div id=rezervirana class="list-container" v-if=rezervirana.length >
+    <p v-if="!gost">
+      Če želiš darilo rezervirati, najprej potrdi, da prideš.
+    </p>
+
+    <div id=rezervirana class="list-container" v-if=rezervirana.length>
+      <article><h3>Tvoja rezervirana darila:</h3></article>
       <article v-for="(darilo, index) in rezervirana" :key="index">
-        <h3>{{darilo.name}} &#x2713;</h3>
+        <h3>{{darilo.name}} <img src="../assets/done.svg" height="20"></h3>
         <a :href="darilo.link" v-if="darilo.link">Link</a>
         <div class="spacer"></div>
         <button @click="rezerviraj(darilo)">Odstrani</button>
@@ -29,10 +34,12 @@
 export default {
   data: () => ({
     darila: [],
-    rezervirana: []
+    rezervirana: [],
+    gost: null
   }),
   async mounted() {
-    const res = await this.$http.get("darila");
+    this.gost = this.$localStorage.get('gost');
+    const res = await this.$http.get(`darila?gost=${this.gost || ''}`);
     this.set(res);
   },
   methods: {
@@ -41,7 +48,7 @@ export default {
       this.rezervirana = res.body.rezervirana;
     },
     async rezerviraj(darilo) {
-      const res = await this.$http.get(`rezerviraj?id=${darilo._id}`);
+      const res = await this.$http.get(`rezerviraj?id=${darilo._id}&gost=${this.gost || ''}`);
       this.set(res);
     }
   }
@@ -56,10 +63,6 @@ section {
 p {
   margin: 8px 0;
   padding: 0 8px;
-}
-#rezervirana {
-  margin-bottom: -1px;
-  border-bottom: 1px solid #666;
 }
 .list-container {
   display: flex;
@@ -77,6 +80,9 @@ article > * {
 }
 article h3 {
   margin-left: 8px;
+}
+article h3 image {
+  vertical-align: bottom;
 }
 article > a {
   margin-left: 8px;
@@ -97,5 +103,22 @@ button {
   background-color: #333;
   border-radius: 2px;
   padding: 3px 10px;
+  appearance: none;
+}
+#rezervirana {
+  margin-bottom: -1px;
+  border-bottom: 1px solid #666;
+  background-color: #274156;
+  border-radius: 3px;
+  color: #eee;
+  padding: 0 10px;
+}
+#rezervirana article>a {
+  border-color: #eee; 
+  color: #eee; 
+}
+#rezervirana button {
+  background-color: #bc0808; 
+  /* color: #eee;  */
 }
 </style>

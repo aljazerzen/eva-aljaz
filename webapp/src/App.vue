@@ -4,11 +4,11 @@
       <img class=curly src="./assets/image.png">
     </header>
     <nav>
-      <router-link to='/poroka'>POROKA</router-link>
-      <router-link to='/slike'>SLIKE</router-link>
-      <router-link to='/časovnica'>ČASOVNICA</router-link>
-      <!-- <router-link to='/'>UDELEŽENCI</router-link> -->
-      <router-link to='/darila'>DARILA</router-link>
+      <router-link exact to='/'>DOMOV</router-link>
+      <router-link exact to='/o-nama'>O NAMA</router-link>
+      <router-link exact to='/prideš'>PRIDEŠ?</router-link>
+      <router-link exact to='/seznam-želja'>SEZNAM ŽELJA</router-link>
+      <router-link exact to='/info'>INFO</router-link>
     </nav>
 
     <router-view class="content-main"/>
@@ -49,21 +49,23 @@ footer,header {
 }
 
 nav {
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
-
+  
   /*margin: 0.1em 1em;*/
 }
 
 nav a {
-  padding: 12px;
+  padding: 12px 20px;
   color: inherit;
   text-decoration: none;
   outline: none;
+  /* padding: 0 5px; */
 }
 
 nav a:hover, nav a.router-link-active {
-  border-bottom: 3px solid #ee3322;
+  border-bottom: 3px solid #bc0808;
   padding-bottom: 9px;
 }
 </style>

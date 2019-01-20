@@ -1,27 +1,41 @@
 <template>
-  <section>
-    <div id="overlay"></div>
+  <div>
+    <section id=hero>
+      <div id="overlay"></div>
 
-    <h1>Eva &amp; Aljaž</h1>
+      <div class="spacer"></div>
+      
+      <h1>Eva &amp; Aljaž</h1>
 
-    <p>7. September 2019 &bullet; Škofja Loka</p>
-
-    <div class="spacer"></div>
-  </section>
+      <p>7. September 2019</p>      
+    </section>
+    <casovnica style="margin: auto"/>
+  </div>
 </template>
+<script>
+import Casovnica from './Časovnica'
+
+export default {
+  components: { Casovnica },
+}
+</script>
+
 <style scoped>
-section {
+#hero {
   position: relative;
   background: center no-repeat;
   background-image: url("../assets/storzic.jpg");
   background-size: cover;
 
-  color: #333;
+  min-height: 400px;
+
+  /* color: #333; */
+  color: #fff;
   display: flex;
   align-content: center;
   flex-direction: column;
 }
-section h1 {
+#hero h1 {
   font-family: "Amatic SC", cursive;
   font-size: 54px;
   margin: 0;
@@ -29,10 +43,13 @@ section h1 {
   text-align: center;
   z-index: 1;
 }
-section p {
+#hero p {
   text-transform: uppercase;
   text-align: center;
   z-index: 1;
+}
+#hero>p, #hero>h1 {
+  text-shadow: 0 0 10px #000;
 }
 
 #overlay {
