@@ -57,7 +57,7 @@ export default {
   async mounted() {
     const gost = this.$localStorage.get("gost");
     const res = await this.$http.get(`pridem?gost=${gost || ""}`);
-    if (res.status == 200 && res.body) {
+    if (res.status == 200 && res.body && res.body.gost) {
       this.data = res.body.gost;
       this.saved = true;
     }
