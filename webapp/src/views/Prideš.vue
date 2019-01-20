@@ -7,7 +7,13 @@
 
       <div>
         <label>Ime in priimek</label>
-        <input type="text" placeholder v-model="data.ime" :class="{ 'done-icon': saved }" @keypress="saved=false">
+        <input
+          type="text"
+          placeholder
+          v-model="data.ime"
+          :class="{ 'done-icon': saved }"
+          @keypress="saved=false"
+        >
       </div>
 
       <div style="flex-direction: row; align-items: center; height: 3em">
@@ -30,7 +36,7 @@
 
       <div v-if="data.pridem">
         <label>Napiši nama nekaj lepega</label>
-        <textarea style="resize: none;" v-model="data.sporocilo" @change="saved=false" ></textarea>
+        <textarea style="resize: none;" v-model="data.sporocilo" @change="saved=false"></textarea>
       </div>
 
       <button @click="send">Pošlji</button>
@@ -38,21 +44,20 @@
   </section>
 </template>
 <script>
-const initialData = () => ({
-  ime: "",
-  pridem: false,
-  gosti: 1,
-  sporocilo: ""
-});
 export default {
   data: () => ({
     saved: false,
-    data: initialData()
+    data: {
+      ime: "",
+      pridem: false,
+      gosti: 1,
+      sporocilo: ""
+    }
   }),
   async mounted() {
-    const gost = this.$localStorage.get('gost');
-    const res = await this.$http.get(`pridem?gost=${gost || ''}`);
-    if(res.status == 200 && res.body) {
+    const gost = this.$localStorage.get("gost");
+    const res = await this.$http.get(`pridem?gost=${gost || ""}`);
+    if (res.status == 200 && res.body) {
       this.data = res.body.gost;
       this.saved = true;
     }
@@ -62,7 +67,7 @@ export default {
       const res = await this.$http.post(`pridem`, { ...this.data });
       if (res.body.id) {
         this.saved = true;
-        this.$localStorage.set('gost', res.body.id);
+        this.$localStorage.set("gost", res.body.id);
       }
     }
   }
@@ -102,7 +107,7 @@ select {
 }
 
 .done-icon {
-  background: url('../assets/done.svg') right no-repeat;
+  background: url("../assets/done.svg") right no-repeat;
   background-size: 3em 2em;
   padding-left: 17px;
 }
