@@ -32,7 +32,8 @@ async function start() {
   })
 
   app.get('/rezerviraj', async (req, res) => {
-    const gost = parseGost(req);
+    const gostId = parseGost(req);
+    const gost = gostId ? await gostiCollection.findOne({ _id: gostId }) : null;
 
     if (gost && ObjectId.isValid(req.query.id)) {
       const _id = ObjectId(req.query.id);
@@ -41,13 +42,13 @@ async function start() {
 
       if (darilo) {
         if (!darilo.rezerviran) {
-          await darilaCollection.updateOne({ _id }, { $set: { rezerviran: gost } });
-        } else if (darilo.rezerviran.equals(gost)) {
+          await darilaCollection.updateOne({ _id }, { $set: { rezerviran: gostId } });
+        } else if (darilo.rezerviran.equals(gostId)) {
           await darilaCollection.updateOne({ _id }, { $unset: { rezerviran: 1 } });
         }
       }
     }
-    res.send(await list(gost));
+    res.send(await list(gostId));
   });
 
   app.post('/pridem', async (req, res) => {

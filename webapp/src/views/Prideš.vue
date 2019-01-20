@@ -74,7 +74,7 @@ section {
   max-width: 400px;
 }
 #card {
-  margin-top: 2em;
+  margin: 2em 5px 0 5px;
   background-color: #274156;
   border-radius: 3px;
   color: #eee;
