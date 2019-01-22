@@ -17,7 +17,7 @@
       </div>
 
       <div style="flex-direction: row; align-items: center; height: 3em">
-        <input type="checkbox" id="pridem" v-model="data.pridem" @change="saved=false">
+        <input type="checkbox" id="pridem" v-model="data.pridem" @change="saved=false" readonly disabled>
         <label for="pridem">{{ data.pridem ? 'Pridem' : 'Ne pridem' }}</label>
 
         <div style="flex-grow: 1"></div>
@@ -49,7 +49,7 @@ export default {
     saved: false,
     data: {
       ime: "",
-      pridem: false,
+      pridem: true,
       gosti: 1,
       sporocilo: ""
     }
