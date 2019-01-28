@@ -16,15 +16,20 @@
         >
       </div>
 
-      <div style="flex-direction: row; align-items: center; height: 3em">
-        <input type="checkbox" id="pridem" v-model="data.pridem" @change="saved=false" readonly disabled>
-        <label for="pridem">{{ data.pridem ? 'Pridem' : 'Ne pridem' }}</label>
-
+      <div style="flex-direction: row;">
+        <input type="radio" id="pridem" :value="true" v-model="data.pridem">
+        <label for="pridem">Pridem</label>
+        
         <div style="flex-grow: 1"></div>
 
+        <input type="radio" id="ne-pridem" :value="false" v-model="data.pridem">
+        <label for="ne-pridem">Ne pridem</label>
+      </div>
+
+      <div>
         <label v-if="data.pridem" for="gosti">Število gostov</label>
         <select v-if="data.pridem" id="gosti" v-model="data.gosti" @keypress="saved=false">
-          <option>1</option>
+          <option value="1">pridem sam</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>

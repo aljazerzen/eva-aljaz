@@ -27,6 +27,9 @@
         <div class="spacer"></div>
         <button @click="rezerviraj(darilo)">Rezerviraj</button>
       </article>
+      <article v-if="!darila.length">
+        <p style="color: #999">Idej nama je zmankalo...</p>
+      </article>
     </div>
   </section>
 </template>

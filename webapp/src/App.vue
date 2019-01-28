@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <img class="curly" src="./assets/image.png">
+      <img class="curly" src="./assets/curly.png">
     </header>
     <nav :class="{ collapse: collapse }">
       <router-link exact to="/">DOMOV</router-link>
@@ -15,7 +15,7 @@
     <router-view class="content-main"/>
 
     <footer>
-      <img class="curly" src="./assets/image.png" style="transform: scaleY(-1);">
+      <img class="curly" src="./assets/curly.png" style="transform: scaleY(-1);">
     </footer>
   </div>
 </template>

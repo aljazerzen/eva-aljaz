@@ -1,7 +1,9 @@
 <template>
   <div>
     <section id=hero>
-      <div id="overlay"></div>
+      <div id="overlay">
+        <img id="fingerprints" src="../assets/fingerprints.png">
+      </div>
 
       <div class="spacer"></div>
       
@@ -57,5 +59,10 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+#fingerprints {
+  max-width: 300px;
+  max-height: 100px;
 }
 </style>
