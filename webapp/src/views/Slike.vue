@@ -7,7 +7,7 @@
         <li>sva postala par na avtobusu tik preden je Eva izstopila, oktobra 2011?</li>
         <li>sva skupaj plesala na valeti in dveh maturantskih plesih?</li>
         <li>Aljaž obožuje vse vrste sira, ne mara pa rib?</li>
-        <li>Eva obožuje Siddharto in Goro Rocka nasloh?</li>
+        <li>Eva obožuje Siddharto in Goro Rocka nasploh?</li>
         <li>Aljaž raje spi zjutraj, Eva pa popoldne?</li>
         <li>oba postiljava posteljo na svoj način in pri temu trdiva, da je ta edino pravilen? </li>
         <li>za sprostitev gledava Bob Rossa in se ukvarjava z acro yogo?</li>
