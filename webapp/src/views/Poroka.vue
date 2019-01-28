@@ -2,7 +2,7 @@
   <div>
     <section id=hero>
       <div id="overlay">
-        <img id="fingerprints" src="../assets/fingerprints.png">
+        <img id="fingerprints" src="../assets/fingerprints_small.png">
       </div>
 
       <div class="spacer"></div>

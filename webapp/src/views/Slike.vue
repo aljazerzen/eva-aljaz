@@ -1,7 +1,22 @@
 <template>
   <section>
     <article>
-			<h2>O nama</h2>
+			<h2>Ali ste vedeli, da</h2>
+
+      <ol>
+        <li>sva postala par na avtobusu tik preden je Eva izstopila, oktobra 2011?</li>
+        <li>sva skupaj plesala na valeti in dveh maturantskih plesih?</li>
+        <li>Aljaž obožuje vse vrste sira, ne mara pa rib?</li>
+        <li>Eva obožuje Siddharto in Goro Rocka nasloh?</li>
+        <li>Aljaž raje spi zjutraj, Eva pa popoldne?</li>
+        <li>oba postiljava posteljo na svoj način in pri temu trdiva, da je ta edino pravilen? </li>
+        <li>za sprostitev gledava Bob Rossa in se ukvarjava z acro yogo?</li>
+        <li>Aljaž hodi v hribe in na koncerte bolj zaradi Eve?</li>
+        <li>Eva igra računalniške igre in tarok bolj zaradi Aljaža?</li>
+        <li>sva v preteklosti prepričala kar nekaj ljudi, da Eva trenira box?</li>
+        <li>zna Eva narediti <i>najboljši</i> cheesecake?</li>
+        <li>ima Aljaž smisel za humor in upogljiva palca? </li>
+      </ol>
     </article>
     <div class="row">
       <div class="col">
@@ -68,7 +83,17 @@
 </template>
 <style scoped>
 article {
+  max-width: 450px;
+  margin: auto;
+}
+article h2 {
 	text-align: center;
+}
+article ol {
+  padding-left: 30px;
+}
+article li {
+  padding: 8px 0 8px 10px;
 }
 section img {
   width: 100%;
