@@ -17,11 +17,11 @@
     </p>
     <p>
       <b>Kje lahko spim?</b>
-      Pri najnih prijateljih v Ljubljani, ali pa kar v spalki v gaju.
+      Pri najnih prijateljih v Ljubljani, ali v apartmajih na bližnjih kmetijah.
     </p>
     <p>
       <b>Ali se bo našlo tudi kaj za vegeterjance in vegane?</b>
-      Bo.      
+      Bo, če nama to sporočiš (tudi če imaš kakšne druge posebnosti prehrane).
     </p>
     <p>
       <b>Ali ima Eva že obleko?</b>

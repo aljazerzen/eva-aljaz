@@ -9,7 +9,7 @@
       
       <h1>Eva &amp; Aljaž</h1>
 
-      <p>7. September 2019</p>      
+      <p>21. September 2019</p>      
     </section>
     <casovnica style="margin: auto"/>
   </div>
