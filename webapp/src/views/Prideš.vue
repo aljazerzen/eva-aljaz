@@ -2,7 +2,7 @@
   <section>
     <div id="card">
       <header>Prideš?
-        <div>Sporoči do 12. avgusta</div>
+        <div>Sporoči do 21. avgusta</div>
       </header>
 
       <div>
