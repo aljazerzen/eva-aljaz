@@ -28,7 +28,7 @@
           <h3>{{darilo.name}}</h3>
           <p v-if=darilo.description >{{ darilo.description }}</p>
         </div>
-        <a :href="darilo.link" v-if="darilo.link">Link</a>
+        <a :href="darilo.link" v-if="darilo.link" target="_blank">Link</a>
         <button @click="rezerviraj(darilo)">Rezerviraj</button>
       </article>
       <article v-if="!darila.length" style="margin-top: 20px">
