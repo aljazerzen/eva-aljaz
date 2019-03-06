@@ -17,7 +17,8 @@
     </p>
     <p>
       <b>Kje lahko spim?</b>
-      Pri najnih prijateljih v Ljubljani, ali v apartmajih na bližnjih kmetijah.
+      Pri najnih prijateljih v Ljubljani, ali v apartmajih na bližnjih kmetijah. 
+      Za več info najbolje da naju pokličeš par tednov pred poroko.
     </p>
     <p>
       <b>Ali se bo našlo tudi kaj za vegeterjance in vegane?</b>
