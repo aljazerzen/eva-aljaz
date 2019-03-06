@@ -3,7 +3,7 @@
 
     <div>
       <h2>Civilna poroka</h2>
-      <h3>17:30</h3>
+      <h3>16:00</h3>
       <p>
       Grajski vrt v Škofji Loki <br>
       Grajska pot 14 <br>
@@ -13,24 +13,13 @@
     </div>
     <div>
       <h2>Večerja in žurka</h2>
-      <h3>20:00</h3>
+      <h3>18:00</h3>
       <p>
-      Dijaški dom Tabor<br>
-      Kotinkova ulica 4<br>
-      1000 Ljublajna
+      Orehov gaj<br>
+      Cesta 13. julija 32<br>
+      1261 Ljubljana-Dobrunje
       </p>
     </div>
-
-    <!-- <div>
-      <h2>Žurka</h2>
-      <h3>24:00</h3>
-      <p>
-      Dijaški dom Tabor<br>
-      Kotinkova ulica 4<br>
-      1000 Ljublajna
-      </p>
-    </div>
-   -->
   </section>
 </template>
 <script>

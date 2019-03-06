@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section style="display: flex; flex-direction: column;">
     <h2>Pogosta vprašanja</h2>
     
     <p>
@@ -7,8 +7,8 @@
       Ne, najbolje da parkiraš pri Tehniku ali na Peptovem klancu (na Grabnu).
     </p>
     <p>
-      <b>Ali je parkirišče v Taboru?</b>
-      Ja, parkiranje bo možno na igrišču doma. Za vstop pozvoni vratarju.
+      <b>Ali je parkirišče v Orehovem gaju?</b>
+      Ja, to pa ne bo problema.
     </p>
     <p>
       <b>Kaj si želita za darilo?</b>
@@ -17,8 +17,7 @@
     </p>
     <p>
       <b>Kje lahko spim?</b>
-      Pri najnih prijateljih v Ljubljani ali kar v spalki v dvorani. 
-      Če bo veliko zanimanja, bomo pa najeli še par sob v dijaškem domu.
+      Pri najnih prijateljih v Ljubljani, ali pa kar v spalki v gaju.
     </p>
     <p>
       <b>Ali se bo našlo tudi kaj za vegeterjance in vegane?</b>
@@ -31,9 +30,18 @@
     
     <h2>Kontakt</h2>
     
-    <div class=col><b>Eva</b><br>068 198 187</div>
-    <div class=col><b>Aljaž</b><br>051 715 541</div>
-    
+    <div>
+      <div class=col><b>Eva</b><br>068 198 187</div>
+      <div class=col><b>Aljaž</b><br>051 715 541</div>
+    </div>
+
+    <div class="spacer"></div>    
+
+    <div style="display: flex; justify-content: center; margin">
+      <a href="http://github.com/aljazerzen/eva-aljaz" target="_blank">
+        <img id="fingerprints" src="../assets/github.svg" width=20 >
+      </a>
+    </div>
 
   </section>
 </template>

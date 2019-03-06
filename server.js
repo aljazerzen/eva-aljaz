@@ -17,9 +17,14 @@ async function start() {
   const gostiCollection = mongo.db().collection('gosti');
 
   async function list(gost) {
-    const darila = darilaCollection.find({ rezerviran: { $exists: false } }).toArray();
-    const rezervirana = gost ? darilaCollection.find({ rezerviran: gost }).toArray() : [];
-    return { darila: await darila, rezervirana: await rezervirana };
+    const darila = await darilaCollection.find({}).toArray();
+
+    const anonimiziraj = d => Object.assign({}, d, { rezerviran: !!d.rezerviran });
+
+    return { 
+      darila: darila.filter(d => !(gost && gost.equals(d.rezerviran))).map(anonimiziraj),
+      moja: darila.filter(d => (gost && gost.equals(d.rezerviran))).map(anonimiziraj) 
+    };
   }
 
   function parseGost(req) {
