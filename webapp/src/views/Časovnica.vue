@@ -15,9 +15,9 @@
       <h2>Večerja in žurka</h2>
       <h3>18:00</h3>
       <p>
-      Orehov gaj<br>
-      Cesta 13. julija 32<br>
-      1261 Ljubljana-Dobrunje
+      <a href="http://orehovgaj.si/kje-smo/">Orehov gaj</a><br>
+      Pod vasjo Obrije<br>
+      na severu Ljubljane
       </p>
     </div>
   </section>
@@ -52,7 +52,9 @@ section h3 {
 section p {
   margin-top: 10px;
   color: #666;
-  
+}
+a:visited, a:link {
+  color: #333;
 }
 
 </style>
