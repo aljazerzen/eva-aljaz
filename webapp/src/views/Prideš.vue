@@ -1,50 +1,51 @@
 <template>
   <section>
     <div id="card">
-      <header>Prideš?
+      <header>
+        Prideš?
         <div>Sporoči do 21. avgusta</div>
       </header>
 
-      <div>
-        <label>Ime in priimek</label>
-        <input
-          type="text"
-          placeholder
-          v-model="data.ime"
-          :class="{ 'done-icon': saved }"
-          @keypress="saved=false"
-        >
+      <div v-if="!saved">
+        <div>
+          <label>Ime in priimek</label>
+          <input type="text" placeholder v-model="data.ime" @keypress="saved=false">
+        </div>
+
+        <div style="flex-direction: row;">
+          <input type="radio" id="pridem" :value="true" v-model="data.pridem">
+          <label for="pridem">Pridem</label>
+
+          <div style="flex-grow: 1"></div>
+
+          <input type="radio" id="ne-pridem" :value="false" v-model="data.pridem">
+          <label for="ne-pridem">Ne pridem</label>
+        </div>
+
+        <div>
+          <label v-if="data.pridem" for="gosti">Število gostov</label>
+          <select v-if="data.pridem" id="gosti" v-model="data.gosti" @keypress="saved=false">
+            <option value="1">pridem sam</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+          </select>
+        </div>
+
+        <div v-if="data.pridem">
+          <label>Napiši nama nekaj lepega</label>
+          <textarea style="resize: none;" v-model="data.sporocilo" @change="saved=false"></textarea>
+        </div>
+
+        <button @click="send" v-if="!saved">Pošlji</button>
       </div>
-
-      <div style="flex-direction: row;">
-        <input type="radio" id="pridem" :value="true" v-model="data.pridem">
-        <label for="pridem">Pridem</label>
-        
-        <div style="flex-grow: 1"></div>
-
-        <input type="radio" id="ne-pridem" :value="false" v-model="data.pridem">
-        <label for="ne-pridem">Ne pridem</label>
+      <div v-else style="text-align: center">
+        Hvala, se vidimo!  
+        <a @click="saved=false" style="font-size: 12px; text-decoration: underline">Uredi</a>
       </div>
-
-      <div>
-        <label v-if="data.pridem" for="gosti">Število gostov</label>
-        <select v-if="data.pridem" id="gosti" v-model="data.gosti" @keypress="saved=false">
-          <option value="1">pridem sam</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-        </select>
-      </div>
-
-      <div v-if="data.pridem">
-        <label>Napiši nama nekaj lepega</label>
-        <textarea style="resize: none;" v-model="data.sporocilo" @change="saved=false"></textarea>
-      </div>
-
-      <button @click="send">Pošlji</button>
     </div>
   </section>
 </template>
@@ -111,12 +112,6 @@ select {
   color: #eee;
 }
 
-.done-icon {
-  background: url("../assets/done.svg") right no-repeat;
-  background-size: 3em 2em;
-  padding-left: 17px;
-}
-
 select {
   padding: 0.5em;
   outline: none;
@@ -126,7 +121,7 @@ select:active {
   color: #222;
 }
 
-#card > div {
+#card > div > div {
   margin: 20px 0;
   display: flex;
   flex-direction: column;

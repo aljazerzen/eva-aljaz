@@ -10,7 +10,7 @@
       Če želiš darilo rezervirati, najprej potrdi, da prideš.
     </p>
 
-    <div id=moja class="list-container" v-if=moja.length>
+    <div id=moja class="list-container" v-if="moja && moja.length">
       <article style="border: none"><h3>Tvoja rezervirana darila:</h3></article>
       <article v-for="(darilo, index) in moja" :key="index">
         <div>  
@@ -22,26 +22,29 @@
       </article>
     </div>
 
-    <div class="list-container">
+    <div class="list-container" v-if="darila">
       <article v-for="(darilo, index) in darila" :key="index">
         <div>
           <h3>{{darilo.name}}</h3>
           <p v-if=darilo.description >{{ darilo.description }}</p>
         </div>
         <a :href="darilo.link" v-if="darilo.link" target="_blank">Link</a>
-        <button @click="rezerviraj(darilo)">Rezerviraj</button>
+        <button @click="rezerviraj(darilo)" v-if="!darilo.rezerviran">Rezerviraj</button>
       </article>
       <article v-if="!darila.length" style="margin-top: 20px">
         <p style="color: #999">Idej je zmankalo, mogoče jih še kaj dodava...</p>
       </article>
+    </div>
+    <div v-else>
+      nalaganje
     </div>
   </section>
 </template>
 <script>
 export default {
   data: () => ({
-    darila: [],
-    moja: [],
+    darila: null,
+    moja: null,
     gost: null
   }),
   async mounted() {
@@ -51,7 +54,7 @@ export default {
   },
   methods: {
     set(res) {
-      this.darila = res.body.darila;
+      this.darila = res.body.darila.sort((a, b) => +a.rezerviran - +b.rezerviran);
       this.moja = res.body.moja;
     },
     async rezerviraj(darilo) {
