@@ -1,0 +1,4 @@
+services:
+  mongo:
+    image: 'mongo:latest'
+    network_mode: "host"
